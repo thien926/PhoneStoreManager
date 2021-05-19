@@ -70,7 +70,7 @@ public class LoginGUI extends javax.swing.JFrame {
         labelpass = new javax.swing.JLabel();
         txtusername = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        labelusername1 = new javax.swing.JLabel();
+        labelusername = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
         txtpass = new javax.swing.JPasswordField();
         btnlogin = new javax.swing.JButton();
@@ -133,10 +133,10 @@ public class LoginGUI extends javax.swing.JFrame {
         jPanel1.add(txtusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 360, 40));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 360, 10));
 
-        labelusername1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelusername1.setText("Tên đăng nhập:");
-        labelusername1.setToolTipText("");
-        jPanel1.add(labelusername1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
+        labelusername.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        labelusername.setText("Tên đăng nhập:");
+        labelusername.setToolTipText("");
+        jPanel1.add(labelusername, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 170, -1, -1));
         jPanel1.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 330, 350, 10));
 
         txtpass.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -269,7 +269,7 @@ public class LoginGUI extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel labelclose;
     private javax.swing.JLabel labelpass;
-    private javax.swing.JLabel labelusername1;
+    private javax.swing.JLabel labelusername;
     private javax.swing.JPasswordField txtpass;
     private javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables

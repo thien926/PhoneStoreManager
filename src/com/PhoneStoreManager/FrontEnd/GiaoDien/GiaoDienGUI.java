@@ -95,9 +95,9 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         JLabel cc = new JLabel("Chào " + LoginGUI.currentNhanVien.getTenNV());
         cc.setFont(new Font("Tahoma", Font.BOLD, 18));
         cc.setBounds(400, 250, 500, 100);
-        jPanel4.removeAll();
-        jPanel4.add(cc);
-        jPanel4.validate();
+        panelMain.removeAll();
+        panelMain.add(cc);
+        panelMain.validate();
     }
     
     private void initChucNang(){
@@ -106,38 +106,28 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         String[] words = s.split("\\s");
         int x = 0, y = 0, w = 109, h = 70;
         jPanel3 = new JPanel();
-        jPanel4 = new JPanel();
-//        jPanel4.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-//            public void mouseDragged(java.awt.event.MouseEvent evt) {
-//                pnTitleMouseDragged(evt);
-//            }
-//        });
-//        jPanel4.addMouseListener(new java.awt.event.MouseAdapter() {
-//            public void mousePressed(java.awt.event.MouseEvent evt) {
-//                pnTitleMousePressed(evt);
-//            }
-//        });
+        panelMain = new JPanel();
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(BorderFactory.createEtchedBorder(null, new java.awt.Color(102, 102, 102)));
         GroupLayout jPanel3Layout = new GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
 
-        jPanel4.setBackground(new Color(255, 255, 255));
-        GroupLayout jPanel4Layout = new GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
+        panelMain.setBackground(new Color(255, 255, 255));
+        GroupLayout jPanel4Layout = new GroupLayout(panelMain);
+        panelMain.setLayout(jPanel4Layout);
         if(words.length <= 8){
             jPanel3.setBounds(0, pnTitle.getSize().height, w, getHeight()-pnTitle.getSize().height);
-            jPanel4.setBounds(jPanel3.getSize().width, pnTitle.getSize().height, getWidth()-jPanel3.getSize().width, getHeight()-pnTitle.getSize().height);
+            panelMain.setBounds(jPanel3.getSize().width, pnTitle.getSize().height, getWidth()-jPanel3.getSize().width, getHeight()-pnTitle.getSize().height);
             
         }
         else{
             jPanel3.setBounds(0, pnTitle.getSize().height, w*2, getHeight()-pnTitle.getSize().height);
-            jPanel4.setBounds(jPanel3.getSize().width, pnTitle.getSize().height, getWidth()-jPanel3.getSize().width, getHeight()-pnTitle.getSize().height);
+            panelMain.setBounds(jPanel3.getSize().width, pnTitle.getSize().height, getWidth()-jPanel3.getSize().width, getHeight()-pnTitle.getSize().height);
         }
 //        System.out.println(words.length);
         jPanel1.add(jPanel3);
-        jPanel1.add(jPanel4);
+        jPanel1.add(panelMain);
         for(int i = 0; i < words.length; i++){
             words[i] = words[i].replace("ql", "");
             words[i] = words[i].replace("xem", "");
@@ -502,9 +492,9 @@ public class GiaoDienGUI extends javax.swing.JFrame {
     }
     
     private void themChucNangButton(){
-        jPanel4.removeAll();
-        jPanel4.invalidate();
-        jPanel4.repaint();
+        panelMain.removeAll();
+        panelMain.invalidate();
+        panelMain.repaint();
         Font font = new Font("Tahoma", 1, 12);
         // Nút Thêm
         btnThem = new JButton();
@@ -719,19 +709,19 @@ public class GiaoDienGUI extends javax.swing.JFrame {
     }      
     
     private void btnBanHangMousePressed(MouseEvent evt){
-        jPanel4.removeAll();
-        jPanel4.invalidate();
-        jPanel4.repaint();
+        panelMain.removeAll();
+        panelMain.invalidate();
+        panelMain.repaint();
          // Thêm Table
         tb = new Table();
         tb.setRowHeigth(35);
-        BanHangForm bh = new BanHangForm(jPanel4.getWidth(), jPanel4.getHeight());
+        BanHangForm bh = new BanHangForm(panelMain.getWidth(), panelMain.getHeight());
         
         bh.setVisible(true);
         jLabel1.setText("BÁN HÀNG");
         
-        jPanel4.add(bh);
-        jPanel4.validate();
+        panelMain.add(bh);
+        panelMain.validate();
     }
 
     private void btnNhapHangMouseExited(java.awt.event.MouseEvent evt) {                                        
@@ -746,19 +736,19 @@ public class GiaoDienGUI extends javax.swing.JFrame {
     } 
     
     private void btnNhapHangMousePressed(java.awt.event.MouseEvent evt) {                                       
-        jPanel4.removeAll();
-        jPanel4.invalidate();
-        jPanel4.repaint();
+        panelMain.removeAll();
+        panelMain.invalidate();
+        panelMain.repaint();
          // Thêm Table
         tb = new Table();
         tb.setRowHeigth(35);
-        NhapHangForm nh = new NhapHangForm(jPanel4.getWidth(), jPanel4.getHeight());
+        NhapHangForm nh = new NhapHangForm(panelMain.getWidth(), panelMain.getHeight());
         
         nh.setVisible(true);
         jLabel1.setText("NHẬP HÀNG");
         
-        jPanel4.add(nh);
-        jPanel4.validate();
+        panelMain.add(nh);
+        panelMain.validate();
     } 
 
     private void btnSanPhamMouseEntered(java.awt.event.MouseEvent evt) {                                        
@@ -779,7 +769,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         jLabel1.setText("SẢN PHẨM");
         
         int x = 0, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*6)/2;
+        x = (panelMain.getSize().width - w*6)/2;
         
         // Nút thêm SP
         btnThem.addActionListener(new ActionListener(){
@@ -870,7 +860,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 qlspBUS = new QuanlysanphamBUS();
-                jPanel4.remove(tb);
+                panelMain.remove(tb);
                 tb = new Table();
                 tb.setBound(tb_x, tb_y, tb_w, tb_h);
                 tb.setHeaders(qlspBUS.getHeaders);
@@ -890,15 +880,15 @@ public class GiaoDienGUI extends javax.swing.JFrame {
                 }
                 tb.setRowHeigth(60);
                 tb.resizeColumnWidth();
-                jPanel4.add(tb);
-                jPanel4.validate();
+                panelMain.add(tb);
+                panelMain.validate();
             }
         });
         btnLamMoi.setBounds(x, y, w, h);
         
         
         // Thêm Panel tìm kiếm SP
-        x = (jPanel4.getSize().width - 400 - 600)/2; y = h;
+        x = (panelMain.getSize().width - 400 - 600)/2; y = h;
         pnSearch.setComboBox(qlspBUS.getComboboxSearch);
         pnSearch.txtSearch.addKeyListener(new KeyAdapter(){
             @Override
@@ -951,7 +941,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         });
         
         // Thêm Table SP
-        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = jPanel4.getSize().width; tb_h = jPanel4.getSize().height-tb_y;
+        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = panelMain.getSize().width; tb_h = panelMain.getSize().height-tb_y;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qlspBUS.getHeaders);
         tb.jTable1.getColumn("Hình ảnh").setCellRenderer(new myTableCellRenderer());
@@ -971,17 +961,17 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
 //        tb.jTable1.setValueAt(new ImageIcon(getClass().getResource("/com/PhoneStoreManager/image/product/huawei-y9-2019-blue-400x460.jpg")), 5, 6);
         tb.resizeColumnWidth();
-        jPanel4.add(btnThem);
-        jPanel4.add(btnXoa);
-        jPanel4.add(btnSua);
-        jPanel4.add(btnXuatExcel);
-        jPanel4.add(btnNhapExcel);
-        jPanel4.add(btnLamMoi);
-        jPanel4.add(pnSearch);
-        jPanel4.add(pnSoLuongSearch);
-        jPanel4.add(pnDonGiaSearch);
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(btnThem);
+        panelMain.add(btnXoa);
+        panelMain.add(btnSua);
+        panelMain.add(btnXuatExcel);
+        panelMain.add(btnNhapExcel);
+        panelMain.add(btnLamMoi);
+        panelMain.add(pnSearch);
+        panelMain.add(pnSoLuongSearch);
+        panelMain.add(pnDonGiaSearch);
+        panelMain.add(tb);
+        panelMain.validate();
     }
 
     private void btnLoaiSanPhamMouseEntered(java.awt.event.MouseEvent evt) {                                            
@@ -1001,7 +991,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         jLabel1.setText("LOẠI SẢN PHẨM");
         
         int x = 0, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*6)/2;
+        x = (panelMain.getSize().width - w*6)/2;
         
         // Nút thêm LSP
         btnThem.addActionListener(new ActionListener(){
@@ -1091,7 +1081,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 qllspBUS = new QuanlyloaisanphamBUS();
-                jPanel4.remove(tb);
+                panelMain.remove(tb);
                 tb = new Table();
                 tb.setBound(tb_x, tb_y, tb_w, tb_h);
                 tb.setHeaders(qllspBUS.getHeaders);
@@ -1102,14 +1092,14 @@ public class GiaoDienGUI extends javax.swing.JFrame {
                 }
                 tb.setRowHeigth(35);
                 tb.resizeColumnWidth();
-                jPanel4.add(tb);
-                jPanel4.validate();
+                panelMain.add(tb);
+                panelMain.validate();
             }
         });
         btnLamMoi.setBounds(x, y, w, h);
         
         // Thêm Panel tìm kiếm LSP
-        x = (jPanel4.getSize().width - 400)/2; y = h;
+        x = (panelMain.getSize().width - 400)/2; y = h;
         pnSearch.setComboBox(qllspBUS.getComboboxSearch);
         pnSearch.ComboBoxSearch.addActionListener(new ActionListener(){
             @Override
@@ -1126,7 +1116,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         pnSearch.setSizePanel(x, y);
         
         // Thêm Table LSP
-        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = jPanel4.getSize().width; tb_h = jPanel4.getSize().height - tb_y-1;
+        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = panelMain.getSize().width; tb_h = panelMain.getSize().height - tb_y-1;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qllspBUS.getHeaders);
         int i = 0;
@@ -1136,15 +1126,15 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
         tb.resizeColumnWidth();
         
-        jPanel4.add(btnThem);
-        jPanel4.add(btnXoa);
-        jPanel4.add(btnSua);
-        jPanel4.add(btnXuatExcel);
-        jPanel4.add(btnNhapExcel);
-        jPanel4.add(btnLamMoi);
-        jPanel4.add(pnSearch);
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(btnThem);
+        panelMain.add(btnXoa);
+        panelMain.add(btnSua);
+        panelMain.add(btnXuatExcel);
+        panelMain.add(btnNhapExcel);
+        panelMain.add(btnLamMoi);
+        panelMain.add(pnSearch);
+        panelMain.add(tb);
+        panelMain.validate();
     }
 
     private void btnHoaDonMouseEntered(java.awt.event.MouseEvent evt) {                                       
@@ -1159,12 +1149,12 @@ public class GiaoDienGUI extends javax.swing.JFrame {
     }        
     
     private void btnHoaDonMousePressed(MouseEvent evt){
-        jPanel4.removeAll();
-        jPanel4.repaint();
+        panelMain.removeAll();
+        panelMain.repaint();
         Font font = new Font("Tahoma", 1, 12);
         jLabel1.setText("HÓA ĐƠN");
         int x = 0, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*4)/2;
+        x = (panelMain.getSize().width - w*4)/2;
         
         // Nút Xuất Excel
         btnXuatExcel = new JButton();
@@ -1228,7 +1218,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 qlhd = new QuanlyhoadonBUS();
-                jPanel4.remove(tb);
+                panelMain.remove(tb);
                 tb = new Table();
                 tb.setBound(tb_x, tb_y, tb_w, tb_h);
                 tb.setHeaders(qlhd.getHeaders);
@@ -1239,13 +1229,13 @@ public class GiaoDienGUI extends javax.swing.JFrame {
                 }
                 tb.resizeColumnWidth();
                 tb.setRowHeigth(35);
-                jPanel4.add(tb);
-                jPanel4.validate();
+                panelMain.add(tb);
+                panelMain.validate();
             }
         });
         btnLamMoi.setBounds(x, y, w, h);
         
-        x = (jPanel4.getSize().width-1100)/2;
+        x = (panelMain.getSize().width-1100)/2;
         y = h;
         // Thêm Panel Tìm Kiếm
         pnSearch = new SearchPanel("GIAODIEN");
@@ -1301,7 +1291,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         
         // Thêm Table 
         tb = new Table();
-        tb_x = 0; tb_y = pnSearch.getSize().height + btnLamMoi.getSize().height; tb_w = jPanel4.getSize().width; tb_h = jPanel4.getSize().height - tb_y-1;
+        tb_x = 0; tb_y = pnSearch.getSize().height + btnLamMoi.getSize().height; tb_w = panelMain.getSize().width; tb_h = panelMain.getSize().height - tb_y-1;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qlhd.getHeaders);
         int i = 0;
@@ -1312,16 +1302,16 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         tb.resizeColumnWidth();
         tb.setRowHeigth(35);
         
-        jPanel4.add(btnXuatExcel);
+        panelMain.add(btnXuatExcel);
 //        jPanel4.add(btnNhapExcel);
-        jPanel4.add(btnInPDF);
-        jPanel4.add(btnXemChiTiet);
-        jPanel4.add(btnLamMoi);
-        jPanel4.add(pnSearch);
-        jPanel4.add(pnDateSearch);
-        jPanel4.add(pnDonGiaSearch);
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(btnInPDF);
+        panelMain.add(btnXemChiTiet);
+        panelMain.add(btnLamMoi);
+        panelMain.add(pnSearch);
+        panelMain.add(pnDateSearch);
+        panelMain.add(pnDonGiaSearch);
+        panelMain.add(tb);
+        panelMain.validate();
     }
 
     private void btnPhieuNhapMouseEntered(java.awt.event.MouseEvent evt) {                                          
@@ -1336,12 +1326,12 @@ public class GiaoDienGUI extends javax.swing.JFrame {
     }      
     
     private void btnPhieuNhapMousePressed(MouseEvent evt){
-        jPanel4.removeAll();
-        jPanel4.repaint();
+        panelMain.removeAll();
+        panelMain.repaint();
         Font font = new Font("Tahoma", 1, 12);
         jLabel1.setText("PHIẾU NHẬP");
         int x = 0, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*4)/2;
+        x = (panelMain.getSize().width - w*4)/2;
         
         // Nút Xuất Excel
         btnXuatExcel = new JButton();
@@ -1404,7 +1394,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 qlhd = new QuanlyhoadonBUS();
-                jPanel4.remove(tb);
+                panelMain.remove(tb);
                 tb = new Table();
                 tb.setBound(tb_x, tb_y, tb_w, tb_h);
                 tb.setHeaders(qlpn.getHeaders);
@@ -1415,13 +1405,13 @@ public class GiaoDienGUI extends javax.swing.JFrame {
                 }
                 tb.resizeColumnWidth();
                 tb.setRowHeigth(35);
-                jPanel4.add(tb);
-                jPanel4.validate();
+                panelMain.add(tb);
+                panelMain.validate();
             }
         });
         btnLamMoi.setBounds(x, y, w, h);
         
-        x = (jPanel4.getSize().width-1100)/2;
+        x = (panelMain.getSize().width-1100)/2;
         y = h;
         // Thêm Panel Tìm Kiếm
         pnSearch = new SearchPanel("GIAODIEN");
@@ -1478,7 +1468,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         
         // Thêm Table 
         tb = new Table();
-        tb_x = 0; tb_y = pnSearch.getSize().height + btnLamMoi.getSize().height; tb_w = jPanel4.getSize().width; tb_h = jPanel4.getSize().height - tb_y-1;
+        tb_x = 0; tb_y = pnSearch.getSize().height + btnLamMoi.getSize().height; tb_w = panelMain.getSize().width; tb_h = panelMain.getSize().height - tb_y-1;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qlpn.getHeaders);
         int i = 0;
@@ -1489,16 +1479,16 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         tb.resizeColumnWidth();
         tb.setRowHeigth(35);
         
-        jPanel4.add(btnXuatExcel);
+        panelMain.add(btnXuatExcel);
 //        jPanel4.add(btnNhapExcel);
-        jPanel4.add(btnInPDF);
-        jPanel4.add(btnXemChiTiet);
-        jPanel4.add(btnLamMoi);
-        jPanel4.add(pnSearch);
-        jPanel4.add(pnDateSearch);
-        jPanel4.add(pnDonGiaSearch);
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(btnInPDF);
+        panelMain.add(btnXemChiTiet);
+        panelMain.add(btnLamMoi);
+        panelMain.add(pnSearch);
+        panelMain.add(pnDateSearch);
+        panelMain.add(pnDonGiaSearch);
+        panelMain.add(tb);
+        panelMain.validate();
     }
 
     private void btnKhuyenMaiMouseEntered(java.awt.event.MouseEvent evt) {                                          
@@ -1518,7 +1508,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         jLabel1.setText("KHUYẾN MÃI");
         
         int x = 0, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*7)/2;
+        x = (panelMain.getSize().width - w*7)/2;
         
         // Nút thêm Khuyến Mãi
         btnThem.addActionListener(new ActionListener(){
@@ -1651,7 +1641,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 qlKMBUS = new QuanlykhuyenmaiBUS();
-                jPanel4.remove(tb);
+                panelMain.remove(tb);
                 tb = new Table();
                 tb.setBound(tb_x, tb_y, tb_w, tb_h);
                 tb.setHeaders(qlKMBUS.getHeaders);
@@ -1684,14 +1674,14 @@ public class GiaoDienGUI extends javax.swing.JFrame {
                 }
                 tb.setRowHeigth(35);
                 tb.resizeColumnWidth();
-                jPanel4.add(tb);
-                jPanel4.validate();
+                panelMain.add(tb);
+                panelMain.validate();
             }
         });
         btnLamMoi.setBounds(x, y, w, h);
         
         // Thêm Panel tìm kiếm Khuyến Mãi
-        x = (jPanel4.getSize().width - 400)/2; y = h;
+        x = (panelMain.getSize().width - 400)/2; y = h;
         pnSearch.setComboBox(qlKMBUS.getComboboxSearch);
         pnSearch.ComboBoxSearch.addActionListener(new ActionListener(){
             @Override
@@ -1708,7 +1698,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         pnSearch.setSizePanel(x, y);
         
         // Thêm Table Khuyến Mãi
-        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = jPanel4.getSize().width; tb_h = jPanel4.getSize().height - tb_y-1;
+        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = panelMain.getSize().width; tb_h = panelMain.getSize().height - tb_y-1;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qlKMBUS.getHeaders);
         int i = 0;
@@ -1740,16 +1730,16 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
         tb.resizeColumnWidth();
         
-        jPanel4.add(btnThem);
-        jPanel4.add(btnXoa);
-        jPanel4.add(btnSua);
-        jPanel4.add(btnXuatExcel);
-        jPanel4.add(btnNhapExcel);
-        jPanel4.add(btnLamMoi); 
-        jPanel4.add(btnKetThuc);
-        jPanel4.add(pnSearch);
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(btnThem);
+        panelMain.add(btnXoa);
+        panelMain.add(btnSua);
+        panelMain.add(btnXuatExcel);
+        panelMain.add(btnNhapExcel);
+        panelMain.add(btnLamMoi); 
+        panelMain.add(btnKetThuc);
+        panelMain.add(pnSearch);
+        panelMain.add(tb);
+        panelMain.validate();
     }
 
     private void btnNhanVienMouseEntered(java.awt.event.MouseEvent evt) {                                         
@@ -1769,7 +1759,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         jLabel1.setText("NHÂN VIÊN");
         
         int x = 110, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*6)/2;
+        x = (panelMain.getSize().width - w*6)/2;
         // Nút Thêm Nhân Viên
         btnThem.addActionListener(new ActionListener() {
             @Override
@@ -1858,7 +1848,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         btnLamMoi.setBounds(x, y, w, h);
         
         // Thêm Panel Tìm Kiếm Nhân Viên
-        x = (jPanel4.getSize().width - 800 - 300)/2; y = h;
+        x = (panelMain.getSize().width - 800 - 300)/2; y = h;
         pnSearch.ComboBoxSearch.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -1910,8 +1900,8 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         
         // Thêm Table Nhân Viên
         tb_x = 0; tb_y = pnSearch.getSize().height + btnLamMoi.getSize().height;
-        tb_w = jPanel4.getSize().width;
-        tb_h = jPanel4.getSize().height-pnSearch.getSize().height-btnLamMoi.getSize().height-1;
+        tb_w = panelMain.getSize().width;
+        tb_h = panelMain.getSize().height-pnSearch.getSize().height-btnLamMoi.getSize().height-1;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qlnvBUS.getHeaders);
         String tt = "";
@@ -1928,22 +1918,22 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
         tb.resizeColumnWidth();
         
-        jPanel4.add(tb);
-        jPanel4.add(btnThem);
-        jPanel4.add(btnXoa);
-        jPanel4.add(btnSua);
-        jPanel4.add(btnLamMoi);
-        jPanel4.add(btnXuatExcel);
-        jPanel4.add(btnNhapExcel);
+        panelMain.add(tb);
+        panelMain.add(btnThem);
+        panelMain.add(btnXoa);
+        panelMain.add(btnSua);
+        panelMain.add(btnLamMoi);
+        panelMain.add(btnXuatExcel);
+        panelMain.add(btnNhapExcel);
         
-        jPanel4.add(pnSearch);
-        jPanel4.add(pnDateSearch);
-        jPanel4.add(pnAgeSearch);
-        jPanel4.validate();
+        panelMain.add(pnSearch);
+        panelMain.add(pnDateSearch);
+        panelMain.add(pnAgeSearch);
+        panelMain.validate();
     }
     
     private void LamMoiTableNhanVien(){
-        jPanel4.remove(tb);
+        panelMain.remove(tb);
         tb = new Table();
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qlnvBUS.getHeaders);
@@ -1961,12 +1951,12 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
         tb.setRowHeigth(35);
         tb.resizeColumnWidth();
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(tb);
+        panelMain.validate();
     }
     
     private void LamMoiTableKhachHang(){
-        jPanel4.remove(tb);
+        panelMain.remove(tb);
         tb = new Table();
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qlkhBUS.getHeaders);
@@ -1984,8 +1974,8 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
         tb.setRowHeigth(35);
         tb.resizeColumnWidth();
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(tb);
+        panelMain.validate();
     }
     
     private void btnKhachHangMouseEntered(java.awt.event.MouseEvent evt) {                                          
@@ -2005,7 +1995,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         jLabel1.setText("KHÁCH HÀNG");
         
         int x = 110, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*6)/2;
+        x = (panelMain.getSize().width - w*6)/2;
         // Nút Thêm Khách Hàng
         btnThem.addActionListener(new ActionListener() {
             @Override
@@ -2093,7 +2083,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         btnLamMoi.setBounds(x, y, w, h);
         
         // Thêm Panel Tìm Kiếm Khách Hàng
-        x = (jPanel4.getSize().width - 400)/2; y = h;
+        x = (panelMain.getSize().width - 400)/2; y = h;
         pnSearch.ComboBoxSearch.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -2111,8 +2101,8 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         
         // Thêm Table Khách Hàng
         tb_x = 0; tb_y = pnSearch.getSize().height + btnLamMoi.getSize().height;
-        tb_w = jPanel4.getSize().width;
-        tb_h = jPanel4.getSize().height-pnSearch.getSize().height-btnLamMoi.getSize().height-1;
+        tb_w = panelMain.getSize().width;
+        tb_h = panelMain.getSize().height-pnSearch.getSize().height-btnLamMoi.getSize().height-1;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         
         tb.setHeaders(qlkhBUS.getHeaders);
@@ -2130,16 +2120,16 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
         tb.resizeColumnWidth();
         
-        jPanel4.add(tb);
-        jPanel4.add(btnThem);
-        jPanel4.add(btnXoa);
-        jPanel4.add(btnSua);
-        jPanel4.add(btnLamMoi);
-        jPanel4.add(btnXuatExcel);
-        jPanel4.add(btnNhapExcel);
+        panelMain.add(tb);
+        panelMain.add(btnThem);
+        panelMain.add(btnXoa);
+        panelMain.add(btnSua);
+        panelMain.add(btnLamMoi);
+        panelMain.add(btnXuatExcel);
+        panelMain.add(btnNhapExcel);
         
-        jPanel4.add(pnSearch);
-        jPanel4.validate();
+        panelMain.add(pnSearch);
+        panelMain.validate();
     }
 
     private void btnNCCMouseEntered(java.awt.event.MouseEvent evt) {                                    
@@ -2159,7 +2149,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         jLabel1.setText("NHÀ CUNG CẤP");
         
         int x = 0, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*6)/2;
+        x = (panelMain.getSize().width - w*6)/2;
         
         // Nút thêm NCC
         btnThem.addActionListener(new ActionListener(){
@@ -2249,7 +2239,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 qlNCCBUS = new QuanlyNCCBUS();
-                jPanel4.remove(tb);
+                panelMain.remove(tb);
                 tb = new Table();
                 tb.setBound(tb_x, tb_y, tb_w, tb_h);
                 tb.setHeaders(qlNCCBUS.getHeaders);
@@ -2260,14 +2250,14 @@ public class GiaoDienGUI extends javax.swing.JFrame {
                 }
                 tb.setRowHeigth(35);
                 tb.resizeColumnWidth();
-                jPanel4.add(tb);
-                jPanel4.validate();
+                panelMain.add(tb);
+                panelMain.validate();
             }
         });
         btnLamMoi.setBounds(x, y, w, h);
         
         // Thêm Panel tìm kiếm NCC
-        x = (jPanel4.getSize().width - 400)/2; y = h;
+        x = (panelMain.getSize().width - 400)/2; y = h;
         pnSearch.setComboBox(qlNCCBUS.getComboboxSearch);
         pnSearch.ComboBoxSearch.addActionListener(new ActionListener(){
             @Override
@@ -2284,7 +2274,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         pnSearch.setSizePanel(x, y);
         
         // Thêm Table NCC
-        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = jPanel4.getSize().width; tb_h = jPanel4.getSize().height - tb_y-1;
+        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = panelMain.getSize().width; tb_h = panelMain.getSize().height - tb_y-1;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qlNCCBUS.getHeaders);
         int i = 0;
@@ -2294,15 +2284,15 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
         tb.resizeColumnWidth();
         
-        jPanel4.add(btnThem);
-        jPanel4.add(btnXoa);
-        jPanel4.add(btnSua);
-        jPanel4.add(btnXuatExcel);
-        jPanel4.add(btnNhapExcel);
-        jPanel4.add(btnLamMoi);
-        jPanel4.add(pnSearch);
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(btnThem);
+        panelMain.add(btnXoa);
+        panelMain.add(btnSua);
+        panelMain.add(btnXuatExcel);
+        panelMain.add(btnNhapExcel);
+        panelMain.add(btnLamMoi);
+        panelMain.add(pnSearch);
+        panelMain.add(tb);
+        panelMain.validate();
     }
 
     private void btnTaiKhoanMouseEntered(java.awt.event.MouseEvent evt) {                                         
@@ -2322,7 +2312,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         jLabel1.setText("TÀI KHOẢN");
         
         int x = 0, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*6)/2;
+        x = (panelMain.getSize().width - w*6)/2;
         
         // Nút thêm tài khoản
         btnThem.addActionListener(new ActionListener(){
@@ -2410,7 +2400,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 xltkBUS = new XulyTaiKhoanBUS();
-                jPanel4.remove(tb);
+                panelMain.remove(tb);
                 tb = new Table();
                 tb.setBound(tb_x, tb_y, tb_w, tb_h);
                 tb.setHeaders(xltkBUS.getHeaders);
@@ -2421,14 +2411,14 @@ public class GiaoDienGUI extends javax.swing.JFrame {
                 }
                 tb.setRowHeigth(35);
                 tb.resizeColumnWidth();
-                jPanel4.add(tb);
-                jPanel4.validate();
+                panelMain.add(tb);
+                panelMain.validate();
             }
         });
         btnLamMoi.setBounds(x, y, w, h);
         
         // Thêm Panel tìm kiếm tài khoản
-        x = (jPanel4.getSize().width - 400)/2; y = h;
+        x = (panelMain.getSize().width - 400)/2; y = h;
         pnSearch.setComboBox(xltkBUS.getComboboxSearch);
         pnSearch.setSizePanel(x, y);
         pnSearch.ComboBoxSearch.addActionListener(new ActionListener(){
@@ -2445,7 +2435,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         });
         
         // Thêm Table Tài khoản
-        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = jPanel4.getSize().width; tb_h = jPanel4.getSize().height - tb_y-1;
+        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = panelMain.getSize().width; tb_h = panelMain.getSize().height - tb_y-1;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(xltkBUS.getHeaders);
         int i = 0;
@@ -2455,15 +2445,15 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
         tb.resizeColumnWidth();
         
-        jPanel4.add(btnThem);
-        jPanel4.add(btnXoa);
-        jPanel4.add(btnSua);
-        jPanel4.add(btnXuatExcel);
-        jPanel4.add(btnNhapExcel);
-        jPanel4.add(btnLamMoi);
-        jPanel4.add(pnSearch);
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(btnThem);
+        panelMain.add(btnXoa);
+        panelMain.add(btnSua);
+        panelMain.add(btnXuatExcel);
+        panelMain.add(btnNhapExcel);
+        panelMain.add(btnLamMoi);
+        panelMain.add(pnSearch);
+        panelMain.add(tb);
+        panelMain.validate();
     }
 
     private void btnQuyenMouseEntered(java.awt.event.MouseEvent evt) {                                      
@@ -2483,7 +2473,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         jLabel1.setText("QUYỀN");
         
         int x = 0, y = 0, w = 150, h = 50;
-        x = (jPanel4.getSize().width - w*6)/2;
+        x = (panelMain.getSize().width - w*6)/2;
         
         // Nút thêm quyền
         btnThem.addActionListener(new ActionListener(){
@@ -2573,7 +2563,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 qlquyenBUS = new QuanlyquyenBUS();
-                jPanel4.remove(tb);
+                panelMain.remove(tb);
                 tb = new Table();
                 tb.setBound(tb_x, tb_y, tb_w, tb_h);
                 tb.setHeaders(qlquyenBUS.getHeaders);
@@ -2584,14 +2574,14 @@ public class GiaoDienGUI extends javax.swing.JFrame {
                 }
                 tb.setRowHeigth(35);
                 tb.resizeColumnWidth();
-                jPanel4.add(tb);
-                jPanel4.validate();
+                panelMain.add(tb);
+                panelMain.validate();
             }
         });
         btnLamMoi.setBounds(x, y, w, h);
         
         // Thêm Panel tìm kiếm quyền
-        x = (jPanel4.getSize().width - 400)/2; y = h;
+        x = (panelMain.getSize().width - 400)/2; y = h;
         pnSearch.setComboBox(qlquyenBUS.getComboboxSearch);
         pnSearch.ComboBoxSearch.addActionListener(new ActionListener(){
             @Override
@@ -2608,7 +2598,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         pnSearch.setSizePanel(x, y);
         
         // Thêm Table quyền
-        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = jPanel4.getSize().width; tb_h = jPanel4.getSize().height - tb_y-1;
+        tb_x = 0; tb_y = pnSearch.getSize().height + btnThem.getSize().height; tb_w = panelMain.getSize().width; tb_h = panelMain.getSize().height - tb_y-1;
         tb.setBound(tb_x, tb_y, tb_w, tb_h);
         tb.setHeaders(qlquyenBUS.getHeaders);
         int i = 0;
@@ -2618,15 +2608,15 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         }
         tb.resizeColumnWidth();
         
-        jPanel4.add(btnThem);
-        jPanel4.add(btnXoa);
-        jPanel4.add(btnSua);
-        jPanel4.add(btnXuatExcel);
-        jPanel4.add(btnNhapExcel);
-        jPanel4.add(btnLamMoi);
-        jPanel4.add(pnSearch);
-        jPanel4.add(tb);
-        jPanel4.validate();
+        panelMain.add(btnThem);
+        panelMain.add(btnXoa);
+        panelMain.add(btnSua);
+        panelMain.add(btnXuatExcel);
+        panelMain.add(btnNhapExcel);
+        panelMain.add(btnLamMoi);
+        panelMain.add(pnSearch);
+        panelMain.add(tb);
+        panelMain.validate();
     }
 
     private void btnCongCuMouseEntered(java.awt.event.MouseEvent evt) {                                       
@@ -2656,10 +2646,10 @@ public class GiaoDienGUI extends javax.swing.JFrame {
         JLabel cc = new JLabel("Cài đặt đang bảo trì");
         cc.setFont(new Font("Tahoma", Font.BOLD, 18));
         cc.setBounds(400, 250, 500, 100);
-        jPanel4.removeAll();
-        jPanel4.repaint();
-        jPanel4.add(cc);
-        jPanel4.validate();
+        panelMain.removeAll();
+        panelMain.repaint();
+        panelMain.add(cc);
+        panelMain.validate();
     }
 
     private void btnThongKeMouseEntered(java.awt.event.MouseEvent evt) {                                        
@@ -2674,19 +2664,19 @@ public class GiaoDienGUI extends javax.swing.JFrame {
     }
     
     private void btnThongKeMousePressed(MouseEvent evt){
-        jPanel4.removeAll();
-        jPanel4.invalidate();
-        jPanel4.repaint();
+        panelMain.removeAll();
+        panelMain.invalidate();
+        panelMain.repaint();
          // Thêm Table
         tb = new Table();
         tb.setRowHeigth(35);
         ThongKeForm tk = new ThongKeForm();
-        tk.setBounds(0, 0, jPanel4.getWidth(), jPanel4.getHeight());
+        tk.setBounds(0, 0, panelMain.getWidth(), panelMain.getHeight());
         tk.setVisible(true);
         jLabel1.setText("THỐNG KÊ");
         
-        jPanel4.add(tk);
-        jPanel4.validate();
+        panelMain.add(tk);
+        panelMain.validate();
     }
     
     private void initButton(){
@@ -2891,7 +2881,7 @@ public class GiaoDienGUI extends javax.swing.JFrame {
     
     // Các panel dc thêm
     private javax.swing.JPanel jPanel3;
-    public static javax.swing.JPanel jPanel4;
+    public static javax.swing.JPanel panelMain;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

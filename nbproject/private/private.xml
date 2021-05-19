@@ -3,7 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/java/PhoneStoreManager/src/com/PhoneStoreManager/BackEnd/Quanlykhuyenmai/KhuyenMai.java</file>
+            <file>file:/E:/java/PhoneStoreManager/src/com/PhoneStoreManager/Main/Main.java</file>
+            <file>file:/E:/java/PhoneStoreManager/src/com/PhoneStoreManager/BackEnd/Quanlykhachhang/QuanlykhachhangBUS.java</file>
+            <file>file:/E:/java/PhoneStoreManager/src/com/PhoneStoreManager/WorkWithExcel/XuatExcel.java</file>
         </group>
     </open-files>
 </project-private>

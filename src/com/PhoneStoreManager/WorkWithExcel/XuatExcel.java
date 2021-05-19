@@ -32,9 +32,14 @@ import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFFont;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.IndexedColors;
 import org.apache.poi.ss.usermodel.RichTextString;
 import org.apache.poi.ss.usermodel.Row;
 
@@ -64,6 +69,29 @@ public class XuatExcel {
         return url;
     }
     
+    public HSSFCellStyle getSampleStyle(HSSFWorkbook workbook) {
+        // Font
+        HSSFFont font = workbook.createFont();
+        font.setBold(true);
+        font.setItalic(true);
+ 
+        // Font Height
+        font.setFontHeightInPoints((short) 18);
+ 
+        // Font Color
+        font.setColor(IndexedColors.RED.index);
+ 
+        // Style
+        HSSFCellStyle style = workbook.createCellStyle();
+        style.setBorderBottom(BorderStyle.THIN);
+        style.setBorderLeft(BorderStyle.THIN);
+        style.setBorderRight(BorderStyle.THIN);
+        style.setBorderTop(BorderStyle.THIN);
+        style.setFont(font);
+ 
+        return style;
+    }
+    
     // Xuất file Excel Nhân viên
     public void xuatFileExcelNhanVien(){
         fd.setTitle("Xuất dữ liệu nhân viên ra Excel");
@@ -75,9 +103,11 @@ public class XuatExcel {
         }
         
         FileOutputStream outFile = null;
+        HSSFCell cell;
         try {
             HSSFWorkbook workbook = new HSSFWorkbook();
             HSSFSheet sheet = workbook.createSheet("Nhân viên");
+            HSSFCellStyle style = getSampleStyle(workbook);
             
             ArrayList<NhanVien> list = QuanlynhanvienBUS.getDSNV();
             
@@ -89,7 +119,10 @@ public class XuatExcel {
             int rownum = 0;
             
             Row row = sheet.createRow(rownum);
-            row.createCell(0, CellType.NUMERIC).setCellValue("STT");
+            cell = (HSSFCell) row.createCell(0, CellType.NUMERIC);
+            cell.setCellValue("STT");
+//            cell.setCellStyle(style);
+            
             row.createCell(1, CellType.STRING).setCellValue("Mã nhân viên");
             row.createCell(2, CellType.STRING).setCellValue("Tên nhân viên");
             row.createCell(3, CellType.STRING).setCellValue("Ngày sinh");
@@ -110,7 +143,7 @@ public class XuatExcel {
                 row.createCell(6, CellType.STRING).setCellValue(nv.getTrangThai() == 1 ? "Còn làm" : "Hết làm");
             }
             
-            for(int i = 0; i < rownum; ++i){
+            for(int i = 0; i < 7; ++i){
                 sheet.autoSizeColumn(i);
             }
             

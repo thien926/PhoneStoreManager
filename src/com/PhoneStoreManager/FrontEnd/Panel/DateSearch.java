@@ -106,7 +106,7 @@ public class DateSearch extends JPanel{
                     Integer.parseInt(s2[0]), Integer.parseInt(s2[1]), Integer.parseInt(s2[2]));
         }
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
         String[] header = {"STT", "Mã nhân viên", "Tên nhân viên", "Ngày sinh", 
@@ -128,8 +128,8 @@ public class DateSearch extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -159,7 +159,7 @@ public class DateSearch extends JPanel{
                     Integer.parseInt(s2[1]), Integer.parseInt(s2[2]));
         }
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
         GiaoDienGUI.tb.setHeaders(QuanlyhoadonBUS.getHeaders);
@@ -178,8 +178,8 @@ public class DateSearch extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -209,7 +209,7 @@ public class DateSearch extends JPanel{
                     Integer.parseInt(s2[1]), Integer.parseInt(s2[2]));
         }
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
         GiaoDienGUI.tb.setHeaders(QuanlyphieunhapBUS.getHeaders);
@@ -228,8 +228,8 @@ public class DateSearch extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
 }

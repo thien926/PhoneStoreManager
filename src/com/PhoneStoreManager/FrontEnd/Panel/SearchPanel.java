@@ -98,7 +98,7 @@ public class SearchPanel extends JPanel{
 
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<NhanVien> searchDSNV = QuanlynhanvienBUS.SearchNhanVien(s, type);
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
         GiaoDienGUI.tb.setHeaders(QuanlynhanvienBUS.getHeaders);
@@ -116,8 +116,8 @@ public class SearchPanel extends JPanel{
         }
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -128,7 +128,7 @@ public class SearchPanel extends JPanel{
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<Quyen> list = QuanlyquyenBUS.SearchQuyen(s, type);
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setHeaders(QuanlyquyenBUS.getHeaders);
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
@@ -147,8 +147,8 @@ public class SearchPanel extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -158,7 +158,7 @@ public class SearchPanel extends JPanel{
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<TaiKhoan> list = XulyTaiKhoanBUS.SearchTaiKhoan(s, type);
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setHeaders(XulyTaiKhoanBUS.getHeaders);
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
@@ -177,8 +177,8 @@ public class SearchPanel extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -189,7 +189,7 @@ public class SearchPanel extends JPanel{
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<NCC> list = QuanlyNCCBUS.SearchNCC(s, type);
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setHeaders(QuanlyNCCBUS.getHeaders);
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
@@ -208,8 +208,8 @@ public class SearchPanel extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -220,7 +220,7 @@ public class SearchPanel extends JPanel{
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<KhachHang> list = QuanlykhachhangBUS.SearchKhachHang(s, type);
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setHeaders(QuanlykhachhangBUS.getHeaders);
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
@@ -239,8 +239,8 @@ public class SearchPanel extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -251,7 +251,7 @@ public class SearchPanel extends JPanel{
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<LoaiSanPham> list = QuanlyloaisanphamBUS.SearchLSP(s, type);
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setHeaders(QuanlyloaisanphamBUS.getHeaders);
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
@@ -270,8 +270,8 @@ public class SearchPanel extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -281,7 +281,7 @@ public class SearchPanel extends JPanel{
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<KhuyenMai> list = QuanlykhuyenmaiBUS.SearchKhuyenMai(s, type);
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setHeaders(QuanlykhuyenmaiBUS.getHeaders);
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
@@ -323,8 +323,8 @@ public class SearchPanel extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -335,7 +335,7 @@ public class SearchPanel extends JPanel{
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<SanPham> list = QuanlysanphamBUS.SearchSanPham(s, type);
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setHeaders(QuanlysanphamBUS.getHeaders);
         GiaoDienGUI.tb.jTable1.getColumn("Hình ảnh").setCellRenderer(new myTableCellRenderer());
@@ -363,8 +363,8 @@ public class SearchPanel extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(60);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -375,7 +375,7 @@ public class SearchPanel extends JPanel{
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<HoaDon> list = QuanlyhoadonBUS.SearchHoaDon(s, type);
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setHeaders(QuanlyhoadonBUS.getHeaders);
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
@@ -396,8 +396,8 @@ public class SearchPanel extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -408,7 +408,7 @@ public class SearchPanel extends JPanel{
         String type = ComboBoxSearch.getSelectedItem().toString().trim();
         ArrayList<PhieuNhap> list = QuanlyphieunhapBUS.SearchPhieuNhap(s, type);
 
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setHeaders(QuanlyphieunhapBUS.getHeaders);
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
@@ -429,8 +429,8 @@ public class SearchPanel extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     

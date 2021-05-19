@@ -118,7 +118,7 @@ public class SearchFromTo extends JPanel{
         }
 
         String kq_timkiem = "----- Age From: " + ag1 + " To " + ag2 + " ------ ";
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
         GiaoDienGUI.tb.setHeaders(QuanlynhanvienBUS.getHeaders);
@@ -138,8 +138,8 @@ public class SearchFromTo extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -158,7 +158,7 @@ public class SearchFromTo extends JPanel{
         }
 
         String kq_timkiem = "----- SoLuongSP From: " + ag1 + " To " + ag2 + " ------ ";
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
         GiaoDienGUI.tb.setHeaders(QuanlysanphamBUS.getHeaders);
@@ -186,8 +186,8 @@ public class SearchFromTo extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(60);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -206,7 +206,7 @@ public class SearchFromTo extends JPanel{
         }
 
         String kq_timkiem = "----- DonGiaSP From: " + ag1 + " To " + ag2 + " ------ ";
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
         GiaoDienGUI.tb.setHeaders(QuanlysanphamBUS.getHeaders);
@@ -234,8 +234,8 @@ public class SearchFromTo extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(60);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -254,7 +254,7 @@ public class SearchFromTo extends JPanel{
         }
 
         String kq_timkiem = "----- TongTien From: " + ag1 + " To " + ag2 + " ------ ";
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
         GiaoDienGUI.tb.setHeaders(QuanlyhoadonBUS.getHeaders);
@@ -274,8 +274,8 @@ public class SearchFromTo extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
     
@@ -294,7 +294,7 @@ public class SearchFromTo extends JPanel{
         }
 
         String kq_timkiem = "----- TongTien From: " + ag1 + " To " + ag2 + " ------ ";
-        GiaoDienGUI.jPanel4.remove(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.remove(GiaoDienGUI.tb);
         GiaoDienGUI.tb = new Table();
         GiaoDienGUI.tb.setBound(GiaoDienGUI.tb_x, GiaoDienGUI.tb_y, GiaoDienGUI.tb_w, GiaoDienGUI.tb_h);
         GiaoDienGUI.tb.setHeaders(QuanlyphieunhapBUS.getHeaders);
@@ -314,8 +314,8 @@ public class SearchFromTo extends JPanel{
 
         GiaoDienGUI.tb.setRowHeigth(35);
         GiaoDienGUI.tb.resizeColumnWidth();
-        GiaoDienGUI.jPanel4.add(GiaoDienGUI.tb);
-        GiaoDienGUI.jPanel4.validate();
+        GiaoDienGUI.panelMain.add(GiaoDienGUI.tb);
+        GiaoDienGUI.panelMain.validate();
         System.out.println(kq_timkiem);
     }
 }
